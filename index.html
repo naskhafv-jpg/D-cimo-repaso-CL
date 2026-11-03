@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Repaso III trimestre · Comunicación y Lenguaje · Décimo</title>
+<meta name="description" content="Repaso interactivo: Fuenteovejuna, Madame Bovary, Fuego infernal, oraciones pasivas y vicios del lenguaje.">
+<style>
+:root{
+  --bg:#F2F4F8; --surface:#FFFFFF; --surface2:#E9EDF4; --ink:#14213D; --muted:#4F5B73; --line:#CBD3E1;
+  --on-accent:#FFFFFF; --ok:#14703B; --okbg:#DFF3E6; --bad:#A12828; --badbg:#F9E1E1; --focus:#1B5FD9;
+  --c-fuente:#A4571B; --c-bovary:#8E3B6B; --c-fuego:#C2410C; --c-gram:#0B7A75; --c-sim:#14213D;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#10151F; --surface:#18202E; --surface2:#222C3E; --ink:#EEF2F9; --muted:#A8B3C8; --line:#33405A;
+    --on-accent:#10151F; --ok:#6EDC9A; --okbg:#143524; --bad:#FF9B9B; --badbg:#3E1B1B; --focus:#8DB4FF;
+    --c-fuente:#E39A5E; --c-bovary:#E58FC0; --c-fuego:#FF8A4C; --c-gram:#5FD3CC; --c-sim:#EEF2F9;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#10151F; --surface:#18202E; --surface2:#222C3E; --ink:#EEF2F9; --muted:#A8B3C8; --line:#33405A;
+  --on-accent:#10151F; --ok:#6EDC9A; --okbg:#143524; --bad:#FF9B9B; --badbg:#3E1B1B; --focus:#8DB4FF;
+  --c-fuente:#E39A5E; --c-bovary:#E58FC0; --c-fuego:#FF8A4C; --c-gram:#5FD3CC; --c-sim:#EEF2F9;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:1rem;line-height:1.55}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.wrap{max-width:60rem;margin:0 auto;padding:1.25rem 1.25rem 4rem}
+.top{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.25rem 0 1rem}
+.brand{font-size:.9rem;color:var(--muted)}
+.ghost{background:transparent;border:1px solid var(--line);border-radius:.6rem;padding:.45rem .8rem;color:var(--ink)}
+.ghost:hover{background:var(--surface2)}
+h1,h2,h3{font-family:var(--serif);line-height:1.15;margin:0}
+.hero{padding:1.5rem 0 2rem}
+.hero h1{font-size:clamp(2rem,6vw,3.4rem);letter-spacing:-.01em;max-width:18ch}
+.hero p{max-width:46ch;color:var(--muted);margin:1rem 0 0;font-size:1.05rem}
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+@media (min-width:42rem){.grid{grid-template-columns:repeat(2,1fr)}}
+.mod{position:relative;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:1rem;padding:1.1rem 1.2rem 1.2rem;display:flex;flex-direction:column;gap:.5rem;min-height:15rem;transition:transform .15s ease,border-color .15s}
+.mod:hover{transform:translateY(-3px);border-color:var(--accent)}
+.mod .pages{font-family:var(--serif);font-size:3rem;line-height:1;color:var(--accent);letter-spacing:-.02em}
+.mod .src{font-size:.85rem;color:var(--muted);margin-top:-.25rem}
+.mod h2{font-size:1.35rem;margin-top:.5rem}
+.mod p{margin:0;color:var(--muted);font-size:.95rem}
+.mod .stat{margin-top:auto;font-size:.88rem;color:var(--muted);padding-top:.6rem;border-top:1px solid var(--line)}
+.sim{grid-column:1/-1;background:var(--ink);color:var(--bg);border-color:var(--ink);min-height:0;flex-direction:row;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.sim h2{margin:0}.sim p,.sim .stat{color:inherit;opacity:.85}
+.sim .stat{border:0;padding:0;margin:0}
+.sim:hover{border-color:var(--ink)}
+.back{background:none;border:0;color:var(--muted);padding:.25rem 0;margin-bottom:.5rem;font-size:.95rem}
+.back:hover{color:var(--ink);text-decoration:underline}
+.mhead{border-left:.5rem solid var(--accent);padding-left:1rem;margin-bottom:1.5rem}
+.mhead h1{font-size:clamp(1.8rem,5vw,2.6rem)}
+.mhead p{margin:.4rem 0 0;color:var(--muted)}
+.actions{display:grid;gap:.9rem;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr))}
+.act{background:var(--surface);border:1px solid var(--line);border-radius:.9rem;padding:1rem 1.1rem;text-align:left;display:flex;flex-direction:column;gap:.25rem}
+.act:hover{border-color:var(--accent)}
+.act strong{font-size:1.05rem}
+.act span{color:var(--muted);font-size:.92rem}
+.act .best{color:var(--accent);font-weight:600;font-size:.85rem;margin-top:.3rem}
+.bar{height:.5rem;background:var(--surface2);border-radius:1rem;overflow:hidden;margin:.8rem 0 1.2rem}
+.bar>i{display:block;height:100%;background:var(--accent);width:0;transition:width .25s}
+.meta{display:flex;justify-content:space-between;color:var(--muted);font-size:.92rem;gap:1rem;flex-wrap:wrap}
+.q{font-family:var(--serif);font-size:clamp(1.3rem,3.6vw,1.75rem);line-height:1.3;margin:0 0 1.2rem;max-width:40ch}
+.opts{display:grid;gap:.65rem}
+.opt{text-align:left;background:var(--surface);border:2px solid var(--line);border-radius:.8rem;padding:.8rem 1rem;display:flex;gap:.8rem;align-items:flex-start}
+.opt:hover:not(:disabled){border-color:var(--accent)}
+.opt .k{flex:none;width:1.7rem;height:1.7rem;border-radius:50%;border:1.5px solid var(--muted);display:grid;place-items:center;font-size:.85rem;color:var(--muted)}
+.opt:disabled{cursor:default}
+.opt.right{background:var(--okbg);border-color:var(--ok)}
+.opt.wrong{background:var(--badbg);border-color:var(--bad)}
+.opt.right .k{background:var(--ok);border-color:var(--ok);color:var(--surface)}
+.opt.wrong .k{background:var(--bad);border-color:var(--bad);color:var(--surface)}
+.fb{margin-top:1.1rem;padding:1rem 1.1rem;border-radius:.8rem;background:var(--surface2);border:1px solid var(--line)}
+.fb b{display:block;margin-bottom:.25rem}
+.fb.ok b{color:var(--ok)}.fb.no b{color:var(--bad)}
+.primary{background:var(--accent);color:var(--on-accent);border:0;border-radius:.7rem;padding:.7rem 1.3rem;font-weight:600}
+.primary:hover{filter:brightness(1.1)}
+.row{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.2rem}
+.card3d{perspective:1200px;margin:0 auto;max-width:36rem}
+.fc{position:relative;width:100%;min-height:17rem;border:0;background:none;padding:0;text-align:center}
+.fc .face{position:absolute;inset:0;border-radius:1.1rem;padding:1.5rem 1.6rem;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:.6rem;backface-visibility:hidden;-webkit-backface-visibility:hidden;transition:transform .45s ease;border:1px solid var(--line)}
+.fc .front{background:var(--surface);transform:rotateY(0)}
+.fc .rev{background:var(--accent);color:var(--on-accent);border-color:var(--accent);transform:rotateY(180deg)}
+.fc.flip .front{transform:rotateY(-180deg)}
+.fc.flip .rev{transform:rotateY(0)}
+.fc .front h2{font-size:clamp(1.3rem,3.6vw,1.7rem)}
+.fc .hint{font-size:.85rem;color:var(--muted)}
+.fc .rev p{margin:0;font-size:1.05rem;line-height:1.5}
+.score{font-family:var(--serif);font-size:clamp(3rem,12vw,5.5rem);line-height:1;color:var(--accent)}
+.miss{background:var(--surface);border:1px solid var(--line);border-radius:.8rem;padding:.9rem 1rem;margin-top:.8rem}
+.miss p{margin:.2rem 0}
+.tag{display:inline-block;font-size:.78rem;background:var(--surface2);border-radius:1rem;padding:.1rem .6rem;color:var(--muted)}
+.foot{margin-top:3rem;color:var(--muted);font-size:.85rem}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <span class="brand">Complejo Educativo CIT · Comunicación y Lenguaje · Décimo</span>
+    <button class="ghost" id="themeBtn" type="button" aria-label="Cambiar entre tema claro y oscuro">Tema</button>
+  </div>
+  <main id="app" aria-live="polite"></main>
+  <p class="foot">Material de repaso basado en la antología literaria de décimo año. Tu progreso se guarda solo en este navegador.</p>
+</div>
+
+<script>
+"use strict";
+/* ---------- Datos ---------- */
+const Q = (q, ok, bad, why) => ({ q, ok, bad, why });
+
+const MODS = [
+{
+  id:"fuente", color:"--c-fuente", pages:"179–212", name:"Fuenteovejuna", author:"Lope de Vega",
+  blurb:"Conflicto, personajes y temas: tiranía, honor, pueblo protagonista y justicia.",
+  cards:[
+    ["¿En qué hecho histórico se basa la obra?","En el levantamiento de la villa cordobesa de Fuente Obejuna, en 1476, contra el comendador Fernán Gómez de Guzmán, a quien los vecinos mataron."],
+    ["Contexto: el Siglo de Oro","Lope vive entre los reinados de Felipe II, III y IV: España pasa del esplendor imperial a la decadencia. El teatro ofrecía al público una visión patriótica y falsa de la realidad."],
+    ["¿Quién es el Comendador?","Fernán Gómez de Guzmán, Comendador Mayor de la orden de Calatrava. Es el antagonista: abusa de su poder sobre el pueblo."],
+    ["Abuso de poder y tiranía","El Comendador impone su voluntad por la fuerza: acosa a las labradoras, rapta a Laurencia en su boda y maltrata a quienes se le oponen."],
+    ["El honor de los villanos","Lope muestra que los campesinos también tienen honor. Mientras el noble lo viola con sus abusos, el pueblo lo defiende."],
+    ["Identidad colectiva","El pueblo es el protagonista. Bajo tortura, todos responden «Fuenteovejuna lo hizo», y así no hay un culpable individual."],
+    ["Laurencia","Víctima del Comendador, se convierte en líder: reprocha a los hombres su cobardía y encabeza a las mujeres en la rebelión."],
+    ["Justicia, venganza y los Reyes Católicos","La venganza es colectiva. Isabel y Fernando representan la justicia legítima y, al no poder identificar a un culpable, perdonan al pueblo."],
+    ["Género y autor","Obra de teatro (comedia) en verso, de Lope de Vega, en tres actos."]
+  ],
+  quizzes:[{ name:"Conflicto, personajes y temas", desc:"12 preguntas", qs:[
+    Q("¿En qué hecho histórico se basa Fuenteovejuna?","Un levantamiento popular de 1476 contra un comendador",["La derrota de la Armada Invencible","La expulsión de los moriscos","La conquista de Granada"],"La obra dramatiza el levantamiento de la villa de Fuente Obejuna contra el comendador Fernán Gómez de Guzmán."),
+    Q("¿Quién es el antagonista de la obra?","El Comendador Fernán Gómez de Guzmán",["El Maestre de Calatrava","El rey Fernando","El alcalde Esteban"],"El Comendador encarna el abuso de poder y la tiranía."),
+    Q("¿Qué acto del Comendador muestra mejor su tiranía?","Raptar a Laurencia el día de su boda",["Pagar impuestos al rey","Premiar a los labradores","Proteger a Frondoso"],"El rapto en plena boda simboliza que ignora las leyes y el honor del pueblo."),
+    Q("¿Por qué se dice que el pueblo es el protagonista?","Porque la acción decisiva la realizan todos juntos",["Porque no hay personajes femeninos","Porque solo aparece Esteban","Porque el rey lo gobierna"],"No hay un héroe único: la rebelión y la respuesta bajo tortura son colectivas."),
+    Q("¿Qué responden los vecinos cuando el juez pregunta quién mató al Comendador?","«Fuenteovejuna lo hizo»",["«Fue el rey»","«Fue Frondoso»","«Nadie sabe nada»"],"La respuesta repetida bajo tortura expresa la identidad colectiva."),
+    Q("¿Qué papel cumple Laurencia en la rebelión?","Incita a los hombres y lidera a las mujeres",["Huye del pueblo","Defiende al Comendador","Pide perdón al rey"],"Pasa de víctima a líder: reprocha la cobardía de los hombres."),
+    Q("¿Qué idea sobre el honor plantea Lope?","Los villanos también tienen honor, y lo defienden",["Solo los nobles tienen honor","El honor depende del dinero","El honor no importa en el campo"],"El honor deja de ser exclusivo de la nobleza."),
+    Q("¿Qué rey y reina intervienen en el desenlace?","Los Reyes Católicos, Isabel y Fernando",["Felipe II y Margarita","Carlos V e Isabel de Portugal","Enrique IV y Juana"],"Representan la justicia legítima que se contrapone al abuso del noble."),
+    Q("¿Por qué perdonan al pueblo los Reyes Católicos?","Porque no pueden señalar a un culpable concreto",["Porque el pueblo paga una multa","Porque el Comendador está vivo","Porque Frondoso confiesa"],"Como todos dicen lo mismo, la culpa es de todos y el castigo individual es imposible."),
+    Q("¿Cómo era la situación de España en la época de Lope según la antología?","Pasaba del esplendor imperial a la decadencia",["Vivía su mayor prosperidad","Estaba en guerra civil permanente","Era una república"],"La decadencia se vio en la devaluación de la moneda y el empobrecimiento."),
+    Q("¿Quién es Esteban?","Alcalde de Fuenteovejuna y padre de Laurencia",["Criado del Comendador","Soldado del rey","Maestre de Calatrava"],"Es uno de los alcaldes del pueblo y defiende el honor de su hija."),
+    Q("¿Qué tipo de justicia aplica el pueblo al Comendador?","Venganza colectiva por mano propia",["Un juicio formal","Un destierro pacífico","Una votación"],"Ante los abusos y la falta de justicia, el pueblo actúa por su cuenta.")
+  ]}]
+},
+{
+  id:"bovary", color:"--c-bovary", pages:"213–357", name:"Madame Bovary", author:"Gustave Flaubert",
+  blurb:"Realismo frente a Romanticismo, bovarismo, personajes y crítica a la burguesía provinciana.",
+  cards:[
+    ["Madame Bovary: datos clave","Novela del autor francés Gustave Flaubert, publicada en 1856. Causó gran polémica y escándalo por los temas que trata."],
+    ["Realismo","Muestra personajes cotidianos, con observación precisa y detallada. Busca describir la realidad de forma objetiva, racional y fría."],
+    ["Romanticismo","Eleva los sentimientos a su grado máximo. Impera la emoción sobre la razón: el corazón sobre la mente. Es apasionado e intenso."],
+    ["Bovarismo","Querer ser algo que no se es; sufrir la monotonía de la vida cotidiana; perseguir un ideal de felicidad poco realista."],
+    ["La ilusión contrapuesta a la realidad","Leer novelas románticas hace que Emma fantasee con una vida imposible. Se parece a Don Quijote."],
+    ["Presión social y vida aristocrática","Emma se siente atraída por el lujo y los modales de la aristocracia, y se desespera con su vida de provincia."],
+    ["La pasión irracional","Emma se deja llevar por impulsos: amantes y gastos sin medida que la arruinan."],
+    ["Personajes","Emma: protagonista soñadora. Carlos: su esposo, médico bondadoso y mediocre. Rodolfo: seductor que la abandona. León: joven amante. Homais: boticario burgués y presuntuoso. Lheureux: comerciante que la endeuda."],
+    ["Crítica a la sociedad burguesa","Flaubert retrata la hipocresía, la mediocridad y la ambición material de la burguesía de provincias."],
+    ["Desenlace","Emma, endeudada y sin ayuda, se envenena. La novela cierra con la ironía de que Homais prospera."]
+  ],
+  quizzes:[{ name:"Realismo, bovarismo y personajes", desc:"14 preguntas", qs:[
+    Q("¿Quién escribió Madame Bovary?","Gustave Flaubert",["Honoré de Balzac","Víctor Hugo","Stendhal"],"Flaubert la publicó en 1856, y causó escándalo."),
+    Q("¿A qué corriente pertenece la novela?","Realismo",["Romanticismo","Barroco","Modernismo"],"Presenta personajes cotidianos y una observación objetiva y detallada."),
+    Q("¿Cuál es una característica del Realismo?","Describir la realidad de manera objetiva y racional",["Elevar los sentimientos al máximo","Preferir la emoción sobre la razón","Idealizar al héroe"],"Las otras opciones describen al Romanticismo."),
+    Q("¿Qué caracteriza al Romanticismo?","El predominio de la emoción sobre la razón",["La frialdad y la objetividad","La crítica social detallada","Los personajes cotidianos"],"El Romanticismo es apasionado e intenso."),
+    Q("¿Qué es el bovarismo?","Querer ser algo que no se es, persiguiendo un ideal poco realista",["Aceptar con calma la vida cotidiana","Ser una persona práctica y ahorradora","Rechazar la lectura"],"Incluye el sufrimiento por la monotonía de la vida cotidiana."),
+    Q("¿Qué provoca la fantasía de Emma?","La lectura de novelas románticas",["Un viaje a París","La política","Su trabajo de boticaria"],"Pierde el juicio y fantasea con una vida imposible, igual que Don Quijote."),
+    Q("¿Con qué obra se compara a Madame Bovary en la antología?","Don Quijote de la Mancha",["La Celestina","Lazarillo de Tormes","Hamlet"],"En ambas, la literatura distorsiona la percepción de la realidad."),
+    Q("¿Qué tema se refiere al choque entre lo soñado y lo real?","La ilusión contrapuesta a la realidad",["La justicia divina","El honor de los villanos","La ciencia ficción"],"Es uno de los temas centrales del temario."),
+    Q("¿Quién es Carlos Bovary?","El esposo de Emma, médico de provincia",["Su primer amante","El boticario del pueblo","El prestamista"],"Es bondadoso pero mediocre para Emma."),
+    Q("¿Quién es Rodolfo?","Un seductor que se convierte en amante de Emma y luego la abandona",["El esposo de Emma","Un comerciante que le vende a crédito","El hijo de Homais"],"La relación con Rodolfo alimenta su ilusión y termina en decepción."),
+    Q("¿Quién es León?","Un joven que también es amante de Emma",["El alcalde del pueblo","El padre de Emma","Un sacerdote"],"Es otro intento de Emma por encontrar el ideal romántico."),
+    Q("¿Quién es Homais?","El boticario, símbolo de la burguesía presuntuosa",["El médico del pueblo","El notario","El criado de Emma"],"Prospera al final, lo que refuerza la ironía de Flaubert."),
+    Q("¿Qué papel cumple Lheureux?","Comerciante que vende a crédito y endeuda a Emma",["Amigo fiel de Carlos","Director de un teatro","Hermano de Emma"],"Sus deudas arrastran a Emma a la ruina."),
+    Q("¿Cómo termina la novela para Emma?","Se envenena, arruinada y desengañada",["Se muda a París feliz","Se reconcilia con Rodolfo","Hereda una fortuna"],"El desenlace expone el costo de vivir de ilusiones y la crítica a la sociedad burguesa.")
+  ]}]
+},
+{
+  id:"fuego", color:"--c-fuego", pages:"358–365", name:"Fuego infernal", author:"Isaac Asimov",
+  blurb:"Ciencia ficción, era nuclear, simbolismo del fuego, personajes e imagen final.",
+  cards:[
+    ["Autor y género","Isaac Asimov (1920-1992), bioquímico y escritor ruso-estadounidense. «Fuego infernal» es un cuento de ciencia ficción. Obras: Yo, robot y Fundación."],
+    ["Ciencia ficción: características","La ciencia y la tecnología son el eje; plantea hipótesis («¿y si…?»); reflexiona sobre las consecuencias éticas del progreso."],
+    ["Contexto histórico","Era nuclear y Guerra Fría. Las bombas de Hiroshima y Nagasaki (1945) mostraron el poder de las armas atómicas, y luego EE. UU. y la URSS compitieron por ellas."],
+    ["Argumento","En un auditorio, un periodista y un científico esperan una película superlenta de una explosión atómica. El científico dice que las bombas son una sentencia de muerte y que nadie teme lo suficiente."],
+    ["Alvin Horner","Periodista de la Continental Press. Representa al ciudadano común. Cambia: se incomoda y siente el terror."],
+    ["Joseph Vincenzo","Científico de Los Álamos, de aspecto atormentado. Es la voz de la conciencia moral y advierte el peligro."],
+    ["Interpretación del título","Literal: la explosión atómica es el fuego del infierno. Simbólica: la humanidad fabrica su propio castigo."],
+    ["Simbolismo del fuego","Destrucción, castigo y poder humano sin control."],
+    ["La imagen final","En la bola de fuego aparece un rostro con cuernos y sonrisa salvaje: el diablo. La bomba revela su naturaleza y el ser humano creó su propio infierno."]
+  ],
+  quizzes:[{ name:"Género, contexto y análisis", desc:"12 preguntas", qs:[
+    Q("¿Quién escribió «Fuego infernal»?","Isaac Asimov",["Ray Bradbury","Julio Verne","Arthur C. Clarke"],"Asimov es uno de los grandes autores de ciencia ficción."),
+    Q("¿A qué género pertenece el cuento?","Ciencia ficción",["Novela histórica","Poesía lírica","Comedia"],"La tecnología y la reflexión sobre sus consecuencias son el eje."),
+    Q("¿Qué obra escribió Asimov?","Yo, robot",["Madame Bovary","Fuenteovejuna","El Aleph"],"También escribió Fundación."),
+    Q("¿Qué contexto histórico se refleja en el cuento?","La era nuclear y la Guerra Fría",["La Revolución francesa","La conquista de América","La Edad Media"],"El cuento nace después de Hiroshima y Nagasaki."),
+    Q("¿Qué eventos de 1945 se relacionan con el cuento?","Las bombas de Hiroshima y Nagasaki",["La caída del Muro de Berlín","La llegada a la Luna","La Revolución rusa"],"Fueron las primeras bombas atómicas usadas en una guerra."),
+    Q("¿Qué van a ver los asistentes en el auditorio?","Una película superlenta de una explosión atómica",["Una obra de teatro","Un discurso político","Un informe económico"],"La cámara divide el instante de la explosión en fracciones mínimas."),
+    Q("¿Quién es Alvin Horner?","Un periodista de Washington",["Un científico de Los Álamos","Un militar","Un presidente"],"Trabaja para la Continental Press y representa al ciudadano común."),
+    Q("¿Quién es Joseph Vincenzo?","Un científico de Los Álamos",["Un periodista","Un congresista","Un proyeccionista"],"Es la voz de la conciencia moral del cuento."),
+    Q("¿Qué advierte Vincenzo?","Que el ser humano no se asusta lo suficiente ante las bombas",["Que la película fallará","Que la guerra terminó","Que no hay peligro"],"Para él, las bombas son una sentencia de muerte que no logramos comprender."),
+    Q("¿Cómo se interpreta el título de forma literal?","La explosión atómica es el fuego del infierno",["Un incendio forestal","Una fiesta","Un horno industrial"],"Vincenzo afirma que la bomba es el fuego infernal, literalmente."),
+    Q("¿Qué aparece en la bola de fuego al final?","Un rostro con cuernos, como el del diablo",["Una nube de hongo","La cara de Vincenzo","Un mapa del mundo"],"Sugiere que la bomba revela su naturaleza diabólica."),
+    Q("¿Qué simboliza el fuego en el cuento?","Destrucción, castigo y poder humano sin control",["Paz y esperanza","Alegría","Pureza"],"El infierno deja de ser religioso y pasa a ser obra humana.")
+  ]}]
+},
+{
+  id:"gram", color:"--c-gram", pages:"397–402", name:"Gramática", author:"Oraciones pasivas y vicios del lenguaje",
+  blurb:"Clasifica oraciones pasivas, transforma voces y detecta vicios del lenguaje.",
+  cards:[
+    ["Oración pasiva","El sujeto no realiza la acción, sino que la padece: es un sujeto paciente."],
+    ["Pasiva perifrástica","Se forma con ser + participio. Ejemplo: «Las cartas serán entregadas por los directivos.»"],
+    ["Complemento agente","Es quien realiza la acción sin ser el sujeto, y se introduce con «por». Si aparece, la pasiva es completa; si no, incompleta."],
+    ["Pasiva refleja","Usa «se», pero el sujeto no hace nada. El verbo concuerda con el sujeto paciente. Ejemplo: «Se difundieron las noticias.»"],
+    ["Cacofonía","Repetición innecesaria de sonidos o palabras. Ejemplo: «Te doy mi felicitación por tu graduación.»"],
+    ["Redundancia","Repetición de una idea. Ejemplo: «Te doy este lapso de tiempo.»"],
+    ["Pobreza léxica y muletillas","Palabras genéricas o repetidas sin sentido. Ejemplo: «Mae, eso es bueno; porque, mae…»"],
+    ["Ambigüedad","Expresión que puede entenderse de varias maneras. Ejemplo: «Cuando apoyamos el cuadro sobre la mesa, se rompió.»"],
+    ["Barbarismo","Escribir o pronunciar mal una palabra, o usar vocablos impropios. Ejemplo: «nos satisfació».  Correcto: «satisfizo»."],
+    ["Queísmo y dequeísmo","Queísmo: omitir «de» cuando hace falta («Tengo la sensación que…»). Dequeísmo: añadir «de» sin necesitarlo («Te dije de que…»)."],
+    ["Extranjerismos superfluos","Términos de otra lengua que tienen equivalente en español. Ejemplo: «back-up» por «copia de seguridad»."],
+    ["Impropiedades y vulgarismos","Impropiedad: usar una palabra con un significado que no tiene («pescados» por «peces»). Vulgarismo: expresiones muy coloquiales («¿Cómo tás?»)."]
+  ],
+  quizzes:[
+    { name:"Pasivas: clasifica la oración", desc:"10 oraciones", qs:[
+      ...[
+        ["Se buscan cocineros con experiencia.","Pasiva refleja","«cocineros» es el sujeto paciente y el verbo concuerda con él."],
+        ["Carlos se disculpó.","Activa","Carlos realiza la acción. «Se» forma parte del verbo disculparse."],
+        ["Mi abuela fue alcaldesa.","Activa","No es pasiva: «alcaldesa» no es un participio."],
+        ["El fuego fue sofocado rápidamente.","Pasiva perifrástica incompleta","Es ser + participio y no tiene complemento agente."],
+        ["Se contempla un paisaje maravilloso.","Pasiva refleja","«un paisaje maravilloso» es el sujeto paciente."],
+        ["La tesis será defendida con pasión.","Pasiva perifrástica incompleta","«Con pasión» es modo, no agente."],
+        ["El concierto fue cancelado por la empresa organizadora.","Pasiva perifrástica completa","«Por la empresa organizadora» es el complemento agente."],
+        ["El premio fue obtenido por los ganadores del concurso.","Pasiva perifrástica completa","Tiene ser + participio y complemento agente."],
+        ["Se acordó un marco estratégico.","Pasiva refleja","«un marco estratégico» es el sujeto paciente."],
+        ["Se acordó de sus errores.","Activa","Acordarse de equivale a recordar, y el sujeto realiza la acción."]
+      ].map(([s,a,w]) => Q("Clasifica: «"+s+"»", a, ["Activa","Pasiva refleja","Pasiva perifrástica completa","Pasiva perifrástica incompleta"].filter(x=>x!==a), w))
+    ]},
+    { name:"De activa a pasiva", desc:"7 transformaciones", qs:[
+      Q("Pasa a pasiva: «Donald escribió el libro.»","El libro fue escrito por Donald.",["El libro es escrito por Donald.","El libro fueron escritos por Donald.","Donald fue escrito por el libro."],"El verbo ser se conserva en pretérito (fue) y el participio concuerda con «el libro»."),
+      Q("Pasa a pasiva: «Mi tío reparará el microondas mañana.»","El microondas será reparado por mi tío mañana.",["El microondas fue reparado por mi tío mañana.","El microondas es reparado por mi tío mañana.","El microondas será reparada por mi tío mañana."],"El futuro «reparará» pasa a «será reparado»."),
+      Q("Pasa a pasiva: «Los chicos están escuchando una canción de Elvis.»","Una canción de Elvis está siendo escuchada por los chicos.",["Una canción de Elvis fue escuchada por los chicos.","Una canción de Elvis está escuchado por los chicos.","Los chicos están siendo escuchados por una canción de Elvis."],"El tiempo progresivo se conserva con «está siendo»."),
+      Q("Pasa a pasiva: «Ladrones robaron la casa de mi amiga.»","La casa de mi amiga fue robada por ladrones.",["La casa de mi amiga fue robado por ladrones.","Ladrones fueron robados por la casa de mi amiga.","La casa de mi amiga es robada por ladrones."],"El participio «robada» concuerda en femenino con «casa»."),
+      Q("Pasa a pasiva: «Los profesores felicitan a los alumnos.»","Los alumnos son felicitados por los profesores.",["Los alumnos fueron felicitados por los profesores.","Los alumnos es felicitado por los profesores.","Los profesores son felicitados por los alumnos."],"El presente «felicitan» pasa a «son felicitados»."),
+      Q("Pasa a pasiva: «Sofía había pintado tres cuadros.»","Tres cuadros habían sido pintados por Sofía.",["Tres cuadros fueron pintados por Sofía.","Tres cuadros habían pintados por Sofía.","Sofía había sido pintada por tres cuadros."],"El pretérito pluscuamperfecto pasa a «habían sido pintados»."),
+      Q("Pasa a pasiva: «Cientos de turistas visitan Turquía cada año.»","Turquía es visitada por cientos de turistas cada año.",["Turquía fue visitado por cientos de turistas cada año.","Turquía es visitado por cientos de turistas cada año.","Cientos de turistas son visitados por Turquía cada año."],"El participio «visitada» concuerda con «Turquía», que es femenino.")
+    ]},
+    { name:"Vicios: identifica el error", desc:"12 casos", qs:
+      [
+        ["Subió arriba para ver mejor.","Redundancia","Subir ya implica ir hacia arriba."],
+        ["Es que, o sea, tipo, o sea, no sé.","Pobreza léxica y muletillas","Se repiten palabras vacías de significado."],
+        ["Creo de que mañana llueve.","Dequeísmo","Sobra «de»: «Creo que mañana llueve»."],
+        ["Me alegro que hayas venido.","Queísmo","Falta «de»: «Me alegro de que hayas venido»."],
+        ["Hay que hacer un back-up del archivo.","Extranjerismo superfluo","Existe «copia de seguridad»."],
+        ["¿Cómo tás?","Vulgarismo","Es una expresión muy coloquial; en formal sería «¿Cómo estás?»."],
+        ["Tú dijistes la verdad.","Barbarismo","La forma correcta es «dijiste»."],
+        ["Cuando Ana habló con Laura, ella estaba nerviosa.","Ambigüedad","No se sabe a quién se refiere «ella»."],
+        ["Aperturó una cuenta de ahorros.","Impropiedad","Lo adecuado es «abrió»."],
+        ["La situación de la nación en relación con la educación.","Cacofonía","Se repite el sonido «-ción» innecesariamente."],
+        ["Hemos visto muchos pescados en la playa.","Impropiedad","Los peces vivos son «peces», no «pescados»."],
+        ["Tengo que hacer una cosa con la cosa esa.","Pobreza léxica y muletillas","Las palabras genéricas empobrecen el mensaje."]
+      ].map(([s,a,w]) => {
+        const all = ["Cacofonía","Redundancia","Pobreza léxica y muletillas","Ambigüedad","Barbarismo","Queísmo","Dequeísmo","Extranjerismo superfluo","Impropiedad","Vulgarismo"];
+        const bad = all.filter(x=>x!==a).sort(()=>Math.random()-.5).slice(0,3);
+        return Q("¿Qué vicio del lenguaje hay en: «"+s+"»?", a, bad, w);
+      })
+    }
+  ]
+}
+];
+
+/* ---------- Utilidades ---------- */
+const $app = document.getElementById("app");
+const shuffle = a => { a = a.slice(); for (let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; };
+const store = {
+  get(){ try { return JSON.parse(localStorage.getItem("repaso-cl10-2026")) || {}; } catch(e){ return {}; } },
+  set(k,v){ try { const d = this.get(); d[k]=v; localStorage.setItem("repaso-cl10-2026", JSON.stringify(d)); } catch(e){} }
+};
+const el = (tag, attrs={}, ...kids) => {
+  const n = document.createElement(tag);
+  for (const [k,v] of Object.entries(attrs)) {
+    if (k==="class") n.className=v; else if (k.startsWith("on")) n.addEventListener(k.slice(2),v);
+    else if (v===true) n.setAttribute(k,""); else if (v!==false && v!=null) n.setAttribute(k,v);
+  }
+  kids.flat().forEach(c => n.append(c instanceof Node ? c : document.createTextNode(c)));
+  return n;
+};
+const setAccent = m => document.documentElement.style.setProperty("--accent", m ? `var(${m.color})` : "var(--ink)");
+const bestKey = (m,i) => `best:${m}:${i}`;
+const fmtBest = v => v==null ? "Sin intentos" : `Mejor resultado: ${v}%`;
+const flat = () => MODS.flatMap(m => m.quizzes.flatMap(q => q.qs.map(x => ({...x, mod:m.name}))));
+
+/* ---------- Vistas ---------- */
+function home(){
+  setAccent(null); window.scrollTo(0,0);
+  const d = store.get();
+  const grid = el("div",{class:"grid"});
+  MODS.forEach(m => {
+    const bests = m.quizzes.map((_,i)=>d[bestKey(m.id,i)]).filter(v=>v!=null);
+    const avg = bests.length ? Math.round(bests.reduce((a,b)=>a+b,0)/bests.length) : null;
+    const b = el("button",{class:"mod",type:"button",onclick:()=>moduleView(m)},
+      el("div",{class:"pages"}, m.pages),
+      el("div",{class:"src"},"Antología, páginas"),
+      el("h2",{}, m.name),
+      el("p",{}, m.blurb),
+      el("div",{class:"stat"}, avg==null ? "Aún sin practicar" : `Promedio de mejores: ${avg}%`));
+    b.style.setProperty("--accent",`var(${m.color})`);
+    grid.append(b);
+  });
+  const s = el("button",{class:"mod sim",type:"button",onclick:startSim},
+    el("div",{}, el("h2",{},"Simulacro final"), el("p",{},"20 preguntas al azar de todo el temario.")),
+    el("div",{class:"stat"}, fmtBest(d["best:sim"])));
+  grid.append(s);
+  $app.replaceChildren(
+    el("section",{class:"hero"},
+      el("h1",{},"Repaso del tercer trimestre"),
+      el("p",{},"Elige un tema: estudia con tarjetas y comprueba lo aprendido con preguntas. Al final, haz el simulacro.")),
+    grid);
+}
+
+function moduleView(m){
+  setAccent(m); window.scrollTo(0,0);
+  const d = store.get();
+  const acts = el("div",{class:"actions"},
+    el("button",{class:"act",type:"button",onclick:()=>cardsView(m)},
+      el("strong",{},"Tarjetas de estudio"), el("span",{},`${m.cards.length} tarjetas para repasar los conceptos clave.`)),
+    ...m.quizzes.map((q,i)=> el("button",{class:"act",type:"button",onclick:()=>runQuiz({title:`${m.name}: ${q.name}`, qs:q.qs, key:bestKey(m.id,i), back:()=>moduleView(m)})},
+      el("strong",{}, q.name), el("span",{}, `Quiz de ${q.desc}.`), el("span",{class:"best"}, fmtBest(d[bestKey(m.id,i)])))));
+  $app.replaceChildren(
+    el("button",{class:"back",type:"button",onclick:home},"← Volver al inicio"),
+    el("header",{class:"mhead"}, el("h1",{},m.name), el("p",{},`${m.author} · Antología, páginas ${m.pages}`)),
+    acts);
+}
+
+function cardsView(m){
+  setAccent(m); window.scrollTo(0,0);
+  let deck = m.cards.slice(), i = 0, flipped = false;
+  const known = new Set();
+  const draw = () => {
+    const [f,b] = deck[i];
+    const card = el("button",{class:"fc"+(flipped?" flip":""),type:"button","aria-label":flipped?"Respuesta. Pulsa para ver la pregunta":"Pregunta. Pulsa para ver la respuesta",onclick:(e)=>{flipped=!flipped;e.currentTarget.classList.toggle("flip",flipped);e.currentTarget.setAttribute("aria-label",flipped?"Respuesta. Pulsa para ver la pregunta":"Pregunta. Pulsa para ver la respuesta");}},
+      el("div",{class:"face front"}, el("h2",{},f), el("span",{class:"hint"},"Pulsa para voltear")),
+      el("div",{class:"face rev"}, el("p",{},b)));
+    $app.replaceChildren(
+      el("button",{class:"back",type:"button",onclick:()=>moduleView(m)},`← ${m.name}`),
+      el("div",{class:"meta"}, el("span",{},`Tarjeta ${i+1} de ${deck.length}`), el("span",{},`Ya las sé: ${known.size}`)),
+      el("div",{class:"bar"}, el("i",{style:`width:${(i+1)/deck.length*100}%`})),
+      el("div",{class:"card3d"}, card),
+      el("div",{class:"row",style:"justify-content:center"},
+        el("button",{class:"ghost",type:"button",disabled:i===0,onclick:()=>{i--;flipped=false;draw();}},"Anterior"),
+        el("button",{class:"ghost",type:"button",onclick:()=>{known.add(deck[i][0]);next();}},"Ya la sé"),
+        el("button",{class:"primary",type:"button",onclick:next},i===deck.length-1?"Terminar":"Siguiente"),
+        el("button",{class:"ghost",type:"button",onclick:()=>{deck=shuffle(m.cards);i=0;flipped=false;draw();}},"Mezclar")));
+    card.focus({preventScroll:true});
+  };
+  const next = () => { if (i<deck.length-1){ i++; flipped=false; draw(); } else moduleView(m); };
+  draw();
+}
+
+function runQuiz({title, qs, key, back}){
+  let list = shuffle(qs).map(q => ({...q, opts: shuffle([q.ok, ...q.bad])}));
+  startRound(list,true);
+  function startRound(items,full){
+    let i=0, right=0; const missed=[];
+    const show = () => {
+      window.scrollTo(0,0);
+      const q = items[i]; let done=false;
+      const fb = el("div",{});
+      const opts = q.opts.map((o,k)=> el("button",{class:"opt",type:"button",onclick:()=>choose(o,k)}, el("span",{class:"k"},String.fromCharCode(65+k)), el("span",{},o)));
+      const choose = (o) => {
+        if (done) return; done=true;
+        const ok = o===q.ok;
+        if (ok) right++; else missed.push(q);
+        opts.forEach(b => { b.disabled=true; const t=b.lastChild.textContent; if (t===q.ok) b.classList.add("right"); else if (t===o) b.classList.add("wrong"); });
+        fb.replaceChildren(el("div",{class:"fb "+(ok?"ok":"no"),role:"status"}, el("b",{}, ok?"Correcto":"Todavía no"), q.why),
+          el("div",{class:"row"}, el("button",{class:"primary",type:"button",id:"nextBtn",onclick:advance}, i===items.length-1?"Ver resultado":"Siguiente")));
+        document.getElementById("nextBtn").focus();
+      };
+      const advance = () => { if (i<items.length-1){ i++; show(); } else finish(); };
+      $app.replaceChildren(
+        el("button",{class:"back",type:"button",onclick:back},"← Salir del quiz"),
+        el("div",{class:"meta"}, el("span",{},title), el("span",{},`Pregunta ${i+1} de ${items.length}`)),
+        el("div",{class:"bar"}, el("i",{style:`width:${i/items.length*100}%`})),
+        el("h2",{class:"q"}, q.q),
+        el("div",{class:"opts"}, opts), fb);
+      opts[0].focus({preventScroll:true});
+    };
+    const finish = () => {
+      window.scrollTo(0,0);
+      const pct = Math.round(right/items.length*100);
+      if (full) { const d=store.get(); if (d[key]==null || pct>d[key]) store.set(key,pct); }
+      const msg = pct>=90 ? "Excelente dominio del tema." : pct>=70 ? "Buen resultado. Repasa los errores y lo dominas." : "Vuelve a las tarjetas y repite el quiz.";
+      $app.replaceChildren(
+        el("button",{class:"back",type:"button",onclick:back},"← Volver"),
+        el("p",{class:"meta"}, title),
+        el("div",{class:"score"}, `${pct}%`),
+        el("p",{}, `${right} de ${items.length} correctas. ${msg}`),
+        el("div",{class:"row"},
+          missed.length ? el("button",{class:"primary",type:"button",onclick:()=>startRound(shuffle(missed).map(q=>({...q,opts:shuffle([q.ok,...q.bad])})),false)},`Repetir las ${missed.length} falladas`) : "",
+          el("button",{class:missed.length?"ghost":"primary",type:"button",onclick:()=>runQuiz({title,qs,key,back})},"Repetir todo el quiz"),
+          el("button",{class:"ghost",type:"button",onclick:back},"Volver")),
+        missed.length ? el("h3",{style:"margin-top:2rem"},"Para repasar") : "",
+        ...missed.map(q=> el("div",{class:"miss"}, q.mod?el("span",{class:"tag"},q.mod):"", el("p",{},el("b",{},q.q)), el("p",{},"Respuesta: "+q.ok), el("p",{style:"color:var(--muted)"},q.why))));
+    };
+    show();
+  }
+}
+
+function startSim(){
+  setAccent(null);
+  const qs = shuffle(flat()).slice(0,20);
+  runQuiz({title:"Simulacro final", qs, key:"best:sim", back:home});
+}
+
+/* ---------- Tema ---------- */
+document.getElementById("themeBtn").addEventListener("click",()=>{
+  const r = document.documentElement;
+  const dark = r.dataset.theme ? r.dataset.theme==="dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+  r.dataset.theme = dark ? "light" : "dark";
+});
+home();
+</script>
+</body>
+</html>
